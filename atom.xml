@@ -4,7 +4,7 @@
   <title><![CDATA[In The Aggregate]]></title>
   <link href="http://alexgmcm.github.io/atom.xml" rel="self"/>
   <link href="http://alexgmcm.github.io/"/>
-  <updated>2014-11-17T23:00:47+00:00</updated>
+  <updated>2014-11-21T14:25:57+00:00</updated>
   <id>http://alexgmcm.github.io/</id>
   <author>
     <name><![CDATA[alexgmcm]]></name>
@@ -12,5 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Basket Case]]></title>
+    <link href="http://alexgmcm.github.io/blog/2014/11/20/basket-case/"/>
+    <updated>2014-11-20T17:22:47+00:00</updated>
+    <id>http://alexgmcm.github.io/blog/2014/11/20/basket-case</id>
+    <content type="html"><![CDATA[<blockquote><p>When you have eliminated the impossible, whatever remains, however improbable, must be the truth.</p><footer><strong>Sherlock Holmes</strong></footer></blockquote>
+
+<p>I recently discovered a neat problem while looking at job applications. From the <a href="http://sparx.co.uk/deck/fiendish/5.asp">Sparx Deck</a> The problem is as follows:</p>
+
+<blockquote><p>A basketball player decides to spend an afternoon practicing free throws and recording her performance. Over the first hour, her scoring percentage is less than 75%, but by the end of the session, her overall scoring percentage for the day is more than 75%. Is it necessarily true that at some moment during the session her scoring percentage was exactly 75%?</p></blockquote>
+
+<!-- more -->
+
+<p>The answer to the above problem is <strong>yes</strong>. This may seem counter-intuitive but the reasoning will soon become clear as I was interested in solving the extension:
+<blockquote><p>Extension: How special is the choice of 75% in this question? Does the same result hold for other percentages?</p></blockquote></p>
+
+<p>So let us restate the general problem:</p>
+
+<blockquote><p>A basketball player decides to spend an afternoon practicing free throws and recording her performance. Over the first hour, her scoring percentage is less than p%, but by the end of the session, her overall scoring percentage for the day is more than p%. Is it necessarily true that at some moment during the session her scoring percentage was exactly p%?</p></blockquote>
+
+<p>To do this we will prove that the alternative, that the percentage can skip over <em>p</em>%, must be false for some values of <em>p</em> and we will then investigate what decides these values.</p>
+
+<p>First let us express the percentage as a fraction \(p=\frac{a}{b}\) subject to the constraint \(a&lt;b\).</p>
+
+<p>If we assume that it is possible to skip over <em>p</em> then there must be some point where the current percentage is less than <em>p</em> but by scoring just one more basket it will exceed <em>p</em>.</p>
+
+<p>If we let <em>B</em> be the number of baskets scored and <em>N</em> be the total number of shots attempted then we can express these requirements as:</p>
+
+<p>\[ \frac{B}{N}&lt;\frac{a}{b} \quad \mathsf{ and } \quad \frac{B+1}{N+1}&gt;\frac{a}{b} \]</p>
+
+<p>These can be re-arranged to give:
+\[ bB &lt; aN \quad \mathsf{ and } \quad b(B+1) &gt; a(N+1)  \]</p>
+
+<p>The latter of which can be rearranged to \(bB &gt;aN + a - b\)</p>
+
+<p>Remember we have the contraint that \(a&lt;b\) therefore </p>
+]]></content>
+  </entry>
   
 </feed>

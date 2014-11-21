@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="294.60032"
+     inkscape:cy="971.42857"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer">
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3845"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3847"><rect
+           id="rect3849"
+           width="253.57143"
+           height="170"
+           x="168.57143"
+           y="138.07646" /></flowRegion><flowPara
+         id="flowPara3851"></flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3853"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3855"><rect
+           id="rect3857"
+           width="118.57143"
+           height="87.85714"
+           x="227.14285"
+           y="141.6479" /></flowRegion><flowPara
+         id="flowPara3859">010010010010101012000</flowPara><flowPara
+         id="flowPara3861" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3879"
+       style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"><flowRegion
+         id="flowRegion3881"><rect
+           id="rect3883"
+           width="78.571426"
+           height="58.57143"
+           x="174.28572"
+           y="37.362183"
+           style="font-size:9px" /></flowRegion><flowPara
+         id="flowPara3885" /></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="187"
+       y="54.362183"
+       id="text3887"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3889"
+         x="187"
+         y="54.362183" /></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3891"
+       style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="matrix(0.98691497,0,0,1.4272366,3.9309369,-40.227128)"
+       inkscape:export-filename="/home/alexgmcm/Documents/octopress/source/favicon.png"
+       inkscape:export-xdpi="18.284323"
+       inkscape:export-ydpi="18.284323"><flowRegion
+         id="flowRegion3893"><rect
+           id="rect3895"
+           width="80.5"
+           height="60.5"
+           x="174"
+           y="39.362183"
+           style="font-size:8px" /></flowRegion><flowPara
+         id="flowPara3897">100100100100100010010010010010011001000010001000010010110010010001000100010010001000100101</flowPara></flowRoot>  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path2987"
+       sodipodi:cx="180.35715"
+       sodipodi:cy="99.147896"
+       sodipodi:rx="24.642857"
+       sodipodi:ry="20.357143"
+       d="m 205,99.147896 a 24.642857,20.357143 0 1 1 -49.28571,0 24.642857,20.357143 0 1 1 49.28571,0 z"
+       transform="matrix(0.98691497,0,0,1.4272366,47.058351,-90.481569)"
+       inkscape:export-filename="/home/alexgmcm/Documents/octopress/source/favicon.png"
+       inkscape:export-xdpi="18.284323"
+       inkscape:export-ydpi="18.284323" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.74731302;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 174.12323,92.920399 203.86077,68.09133"
+       id="path3759-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/alexgmcm/Documents/octopress/source/favicon.png"
+       inkscape:export-xdpi="18.284323"
+       inkscape:export-ydpi="18.284323" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.61475563px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="188.85318"
+       y="51.090561"
+       id="text3786"
+       sodipodi:linespacing="125%"
+       transform="scale(1.1093855,0.90139992)"
+       inkscape:export-filename="/home/alexgmcm/Documents/octopress/source/favicon.png"
+       inkscape:export-xdpi="18.284323"
+       inkscape:export-ydpi="18.284323"><tspan
+         sodipodi:role="line"
+         id="tspan3788"
+         x="188.85318"
+         y="51.090561">10</tspan><tspan
+         sodipodi:role="line"
+         x="188.85318"
+         y="78.109001"
+         id="tspan3790">01</tspan></text>
+  </g>
+</svg>
