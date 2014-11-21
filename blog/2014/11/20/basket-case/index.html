@@ -56,7 +56,7 @@
 <hgroup>
   <h1><a href="/">In The Aggregate</a></h1>
   
-    <h2>Guaranteed to be probably approximately correct!</h2>
+    <h2>Guaranteed to be Probably Approximately Correct!</h2>
   
 </hgroup>
 
@@ -104,7 +104,7 @@
 
 <div class="entry-content"><blockquote><p>When you have eliminated the impossible, whatever remains, however improbable, must be the truth.</p><footer><strong>Sherlock Holmes</strong></footer></blockquote>
 
-<p>I recently discovered a neat problem while looking at job applications. From the <a href="http://sparx.co.uk/deck/fiendish/5.asp">Sparx Deck</a> The problem is as follows:</p>
+<p>I recently discovered a neat problem while looking at job applications. From the <a href="http://sparx.co.uk/deck/fiendish/5.asp">Sparx Deck</a>, the problem is as follows:</p>
 
 <blockquote><p>A basketball player decides to spend an afternoon practicing free throws and recording her performance. Over the first hour, her scoring percentage is less than 75%, but by the end of the session, her overall scoring percentage for the day is more than 75%. Is it necessarily true that at some moment during the session her scoring percentage was exactly 75%?</p></blockquote>
 
@@ -119,7 +119,7 @@
 
 <p>To do this we will prove that the alternative, that the percentage can skip over <em>p</em>%, must be false for some values of <em>p</em> and we will then investigate what decides these values.</p>
 
-<p>First let us express the percentage as a fraction \(p=\frac{a}{b}\) subject to the constraint \(a&lt;b\).</p>
+<p>First let us express the percentage as a fraction \(p=\frac{a}{b} \times 100\) subject to the constraint \(a&lt;b\) as it is impossible for the scoring percentage to exceed 100%.</p>
 
 <p>If we assume that it is possible to skip over <em>p</em> then there must be some point where the current percentage is less than <em>p</em> but by scoring just one more basket it will exceed <em>p</em>.</p>
 
@@ -128,11 +128,27 @@
 <p>\[ \frac{B}{N}&lt;\frac{a}{b} \quad \mathsf{ and } \quad \frac{B+1}{N+1}&gt;\frac{a}{b} \]</p>
 
 <p>These can be re-arranged to give:
-\[ bB &lt; aN \quad \mathsf{ and } \quad b(B+1) &gt; a(N+1)  \]</p>
+\[ bB &lt; aN \]
+\[ b(B+1) &gt; a(N+1)  \]</p>
 
-<p>The latter of which can be rearranged to \(bB &gt;aN + a - b\)</p>
+<p>The latter of which can be rearranged to:
+ \[bB &gt;aN + a - b\]</p>
 
-<p>Remember we have the contraint that \(a&lt;b\) therefore </p>
+<p>Remember we have the constraint that \(a&lt;b\), hence:
+ \[aN+a-b &lt; aN\]</p>
+
+<p>Therefore we require that:</p>
+
+<p>\[ aN+a-b &lt; bB &lt; aN\]</p>
+
+<p>As we also require that <em>a</em>, <em>b</em>, <em>B</em> and <em>N</em> are all integers then clearly this can only be satisfied when:
+\[ a-b &lt; -1 \]</p>
+
+<p>In any case that \(a-b = -1 \) the scoring percentage will always pass through <em>p</em> if it starts below it and ends up exceeding it.</p>
+
+<p>For example this is the case for \(p=75\%\) as \(a=3\) and \(b=4\) but it is not the case for \(p=60\%\) where \(a=3\) and \(b=5\).</p>
+
+<p>Now we can see why it must pass through 75% and have determined the other percentages for which this condition holds.</p>
 </div>
 
 
