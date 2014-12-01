@@ -1,0 +1,334 @@
+g++ -c -pipe -O2 -pthread -Wall -W -D_REENTRANT -fPIE -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -I../../../Qt/5.4/gcc_64/mkspecs/linux-g++ -I. -I../python/include -I/usr/local/include/OpenEXR -I../../../Qt/5.4/gcc_64/include -I../../../Qt/5.4/gcc_64/include/QtOpenGL -I../../../Qt/5.4/gcc_64/include/QtWidgets -I../../../Qt/5.4/gcc_64/include/QtGui -I../../../Qt/5.4/gcc_64/include/QtCore -I. -I. -o MainWindow.o MainWindow.cpp
+In file included from Global.h:5:0,
+                 from MainWindow.cpp:5:
+VoxelGridGroup.h: In copy constructor ‘VoxelGridLayer::VoxelGridLayer(const VoxelGridLayer&)’:
+VoxelGridGroup.h:155:3: warning: base class ‘class QSharedData’ should be explicitly initialized in the copy constructor [-Wextra]
+   VoxelGridLayer(const VoxelGridLayer &from) :
+   ^
+VoxelGridGroup.h: In copy constructor ‘VoxelGridGroup::VoxelGridGroup(const VoxelGridGroup&)’:
+VoxelGridGroup.h:331:3: warning: base class ‘class QSharedData’ should be explicitly initialized in the copy constructor [-Wextra]
+   VoxelGridGroup(const VoxelGridGroup &from)
+   ^
+In file included from ProjectWidget.h:11:0,
+                 from MainWindow.h:12,
+                 from MainWindow.cpp:7:
+UndoManager.h: In constructor ‘CmdAddSprite::CmdAddSprite(UndoManager*, SproxelProjectPtr, int, VoxelGridGroupPtr)’:
+UndoManager.h:142:7: warning: ‘CmdAddSprite::m_index’ will be initialized after [-Wreorder]
+   int m_index;
+       ^
+UndoManager.h:141:21: warning:   ‘VoxelGridGroupPtr CmdAddSprite::m_sprite’ [-Wreorder]
+   VoxelGridGroupPtr m_sprite;
+                     ^
+UndoManager.h:116:3: warning:   when initialized here [-Wreorder]
+   CmdAddSprite(UndoManager *mgr, SproxelProjectPtr proj, int at, VoxelGridGroupPtr spr)
+   ^
+UndoManager.h: In constructor ‘CmdSetVoxelColor::Change::Change(const V3i&, const Color4f&, int, const Color4f&, int)’:
+UndoManager.h:289:9: warning: ‘CmdSetVoxelColor::Change::oldIndex’ will be initialized after [-Wreorder]
+     int oldIndex, newIndex;
+         ^
+UndoManager.h:288:28: warning:   ‘SproxelColor CmdSetVoxelColor::Change::newColor’ [-Wreorder]
+     SproxelColor oldColor, newColor;
+                            ^
+UndoManager.h:292:5: warning:   when initialized here [-Wreorder]
+     Change(const Imath::V3i& p, const Imath::Color4f &oc, int oi, const Imath::Color4f &nc, int ni)
+     ^
+In file included from MainWindow.h:15:0,
+                 from MainWindow.cpp:7:
+PaletteWidget.h: In constructor ‘PaletteWidget::PaletteWidget(QWidget*, UndoManager*)’:
+PaletteWidget.h:77:18: warning: ‘PaletteWidget::p_undoManager’ will be initialized after [-Wreorder]
+     UndoManager *p_undoManager;
+                  ^
+PaletteWidget.h:67:20: warning:   ‘Imath_2_2::Color4f PaletteWidget::m_activeColor’ [-Wreorder]
+     Imath::Color4f m_activeColor;
+                    ^
+PaletteWidget.h:17:5: warning:   when initialized here [-Wreorder]
+     PaletteWidget(QWidget* parent, UndoManager *um) :
+     ^
+PaletteWidget.h:79:26: warning: ‘PaletteWidget::m_pboxH’ will be initialized after [-Wreorder]
+     int m_palX, m_pboxW, m_pboxH, m_cboxX;
+                          ^
+PaletteWidget.h:79:9: warning:   ‘int PaletteWidget::m_palX’ [-Wreorder]
+     int m_palX, m_pboxW, m_pboxH, m_cboxX;
+         ^
+PaletteWidget.h:17:5: warning:   when initialized here [-Wreorder]
+     PaletteWidget(QWidget* parent, UndoManager *um) :
+     ^
+In file included from MainWindow.cpp:7:0:
+MainWindow.h: In constructor ‘MainWindow::MainWindow(const QString&, QWidget*)’:
+MainWindow.h:118:13: warning: ‘MainWindow::m_activeFilename’ will be initialized after [-Wreorder]
+     QString m_activeFilename;
+             ^
+MainWindow.h:41:23: warning:   ‘SproxelProjectPtr MainWindow::m_project’ [-Wreorder]
+     SproxelProjectPtr m_project;
+                       ^
+MainWindow.cpp:19:1: warning:   when initialized here [-Wreorder]
+ MainWindow::MainWindow(const QString& initialFilename, QWidget *parent) :
+ ^
+MainWindow.cpp:36:58: error: invalid use of incomplete type ‘class QDockWidget’
+     m_paletteDocker = new QDockWidget(tr("Palette"), this);
+                                                          ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:37:20: error: invalid use of incomplete type ‘class QDockWidget’
+     m_paletteDocker->setObjectName("paletteDocker");
+                    ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:38:20: error: invalid use of incomplete type ‘class QDockWidget’
+     m_paletteDocker->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+                    ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:40:20: error: invalid use of incomplete type ‘class QDockWidget’
+     m_paletteDocker->setWidget(m_paletteWidget);
+                    ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:45:56: error: invalid use of incomplete type ‘class QDockWidget’
+     m_projectDocker=new QDockWidget(tr("Project"), this);
+                                                        ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:46:20: error: invalid use of incomplete type ‘class QDockWidget’
+     m_projectDocker->setObjectName("projectDocker");
+                    ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:48:20: error: invalid use of incomplete type ‘class QDockWidget’
+     m_projectDocker->setWidget(m_projectWidget);
+                    ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:79:14: error: invalid use of incomplete type ‘class QMenuBar’
+     menuBar()->show();
+              ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:80:27: error: invalid use of incomplete type ‘class QMenuBar’
+     m_menuFile = menuBar()->addMenu("Fi&le");
+                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:129:27: error: invalid use of incomplete type ‘class QMenuBar’
+     m_menuEdit = menuBar()->addMenu("&Edit");
+                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:187:27: error: invalid use of incomplete type ‘class QMenuBar’
+     m_menuGrid = menuBar()->addMenu("&Grid");
+                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:225:27: error: invalid use of incomplete type ‘class QMenuBar’
+     m_menuView = menuBar()->addMenu("&View");
+                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:267:29: error: invalid use of incomplete type ‘class QMenuBar’
+     m_menuWindow = menuBar()->addMenu("&Window");
+                             ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/qmenu.h:40:0,
+                 from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMenu:1,
+                 from MainWindow.h:4,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qaction.h:199:18: error: forward declaration of ‘class QMenuBar’
+     friend class QMenuBar;
+                  ^
+MainWindow.cpp:269:44: error: invalid use of incomplete type ‘class QDockWidget’
+     m_menuWindow->addAction(m_paletteDocker->toggleViewAction());
+                                            ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:270:44: error: invalid use of incomplete type ‘class QDockWidget’
+     m_menuWindow->addAction(m_projectDocker->toggleViewAction());
+                                            ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:368:16: error: invalid use of incomplete type ‘class QStatusBar’
+     statusBar()->showMessage(tr("Ready"));
+                ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:48:7: error: forward declaration of ‘class QStatusBar’
+ class QStatusBar;
+       ^
+MainWindow.cpp:378:24: error: invalid use of incomplete type ‘class QDockWidget’
+         m_paletteDocker->setVisible(m_appSettings.value("paletteWindow/visibility", true).toBool());
+                        ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:379:24: error: invalid use of incomplete type ‘class QDockWidget’
+         m_projectDocker->setVisible(m_appSettings.value("projectWindow/visibility", true).toBool());
+                        ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp: In member function ‘virtual void MainWindow::closeEvent(QCloseEvent*)’:
+MainWindow.cpp:414:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Save: saveFile(); event->accept(); break;
+                  ^
+MainWindow.cpp:415:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Discard:          event->accept(); break;
+                  ^
+MainWindow.cpp:416:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Cancel:           event->ignore(); break;
+                  ^
+MainWindow.cpp:435:75: error: invalid use of incomplete type ‘class QDockWidget’
+         m_appSettings.setValue("paletteWindow/visibility", m_paletteDocker->isVisible());
+                                                                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp:436:75: error: invalid use of incomplete type ‘class QDockWidget’
+         m_appSettings.setValue("projectWindow/visibility", m_projectDocker->isVisible());
+                                                                           ^
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QMainWindow:1:0,
+                 from MainWindow.h:9,
+                 from MainWindow.cpp:7:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qmainwindow.h:45:7: error: forward declaration of ‘class QDockWidget’
+ class QDockWidget;
+       ^
+MainWindow.cpp: In member function ‘int MainWindow::fileModifiedDialog()’:
+MainWindow.cpp:525:5: error: ‘QMessageBox’ was not declared in this scope
+     QMessageBox msgBox;
+     ^
+MainWindow.cpp:525:17: error: expected ‘;’ before ‘msgBox’
+     QMessageBox msgBox;
+                 ^
+MainWindow.cpp:526:5: error: ‘msgBox’ was not declared in this scope
+     msgBox.setText("The document has been modified.");
+     ^
+MainWindow.cpp:528:31: error: ‘QMessageBox’ is not a class or namespace
+     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+                               ^
+MainWindow.cpp:528:51: error: ‘QMessageBox’ is not a class or namespace
+     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+                                                   ^
+MainWindow.cpp:528:74: error: ‘QMessageBox’ is not a class or namespace
+     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+                                                                          ^
+MainWindow.cpp:529:29: error: ‘QMessageBox’ is not a class or namespace
+     msgBox.setDefaultButton(QMessageBox::Save);
+                             ^
+MainWindow.cpp: In member function ‘void MainWindow::newGrid()’:
+MainWindow.cpp:541:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Save: saveFile(); break;
+                  ^
+MainWindow.cpp:542:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Discard: break;
+                  ^
+MainWindow.cpp:543:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Cancel: return; break;
+                  ^
+MainWindow.cpp: In member function ‘void MainWindow::saveFile()’:
+MainWindow.cpp:582:7: error: ‘QMessageBox’ has not been declared
+       QMessageBox::critical(this, "Sproxel Error", QString("Error saving project to file ")+m_activeFilename);
+       ^
+MainWindow.cpp: In member function ‘void MainWindow::saveFileAs()’:
+MainWindow.cpp:589:47: error: no matching function for call to ‘QFileDialog::setFilter(QString)’
+     fd.setFilter(tr("Sproxel project (*.sxl)"));
+                                               ^
+MainWindow.cpp:589:47: note: candidate is:
+In file included from ../../../Qt/5.4/gcc_64/include/QtWidgets/QFileDialog:1:0,
+                 from MainWindow.cpp:14:
+../../../Qt/5.4/gcc_64/include/QtWidgets/qfiledialog.h:124:10: note: void QFileDialog::setFilter(QDir::Filters)
+     void setFilter(QDir::Filters filters);
+          ^
+../../../Qt/5.4/gcc_64/include/QtWidgets/qfiledialog.h:124:10: note:   no known conversion for argument 1 from ‘QString’ to ‘QDir::Filters {aka QFlags<QDir::Filter>}’
+MainWindow.cpp:612:7: error: ‘QMessageBox’ has not been declared
+       QMessageBox::critical(this, "Sproxel Error", QString("Error saving project to file ")+filename);
+       ^
+MainWindow.cpp: In member function ‘void MainWindow::openFile(QString)’:
+MainWindow.cpp:636:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Save: saveFile(); break;
+                  ^
+MainWindow.cpp:637:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Discard: break;
+                  ^
+MainWindow.cpp:638:18: error: ‘QMessageBox’ has not been declared
+             case QMessageBox::Cancel: return; break;
+                  ^
+MainWindow.cpp:669:7: error: ‘QMessageBox’ has not been declared
+       QMessageBox::critical(this, "Sproxel Error", QString("Error loading project from file ")+filename);
+       ^
+MainWindow.cpp: In member function ‘void MainWindow::exportGrid()’:
+MainWindow.cpp:734:5: error: ‘QMessageBox’ has not been declared
+     QMessageBox::critical(this, "Sproxel Error", QString("Failed to export ")+filename);
+     ^
+MainWindow.cpp: In member function ‘int MainWindow::fileModifiedDialog()’:
+MainWindow.cpp:531:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make: *** [MainWindow.o] Error 1
