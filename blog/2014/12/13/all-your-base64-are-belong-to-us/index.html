@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>All Your Base64 Are Belong to Us - In The Aggregate</title>
+  <meta name="author" content="alexgmcm">
+
+  
+  <meta name="description" content="I recently found the Matasano Crypto Challenges and eagerly set about solving the first one - converting a hex string to base64. My code can be found &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://alexgmcm.github.io/blog/2014/12/13/all-your-base64-are-belong-to-us">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="In The Aggregate" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- MathJax Configuration -->
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-56996937-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner">
+<img src="/images/logo.png" alt="Logo" style="width:100px;height:100px" align="right">
+
+<hgroup>
+  <h1><a href="/">In The Aggregate</a></h1>
+  
+    <h2>Guaranteed to be Probably Approximately Correct!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:alexgmcm.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">All Your Base64 Are Belong to Us</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-13T10:00:36+00:00'><span class='date'>13/12/14</span> <span class='time'>10:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently found the <a href="http://cryptopals.com/">Matasano Crypto Challenges</a> and eagerly set about solving the first one - converting a hex string to base64. My code can <a href="https://github.com/alexgmcm/MatasanoCrypto/tree/master/1">be found here.</a></p>
+
+<!-- more -->
+
+<p>Hex (short for hexadecimal) is the base 16 number system, so whereas decimal has 10 symbols representing the values from 0 to 9, hexadecimal has 16 representing the values 0 to 15. It uses the numbers 0-9 for 0-9 and then the letters a-f for 10-15. Base64 on the other hand has 64 symbols representing the values 0 to 63 (A-Z representing 0-25, a-z representing 26-51, 0-9 representing 52-61 and + and / representing 62 and 63 respectively)</p>
+
+<p>Any number can be represented in any base as a polynomial. For example we can represent any number, \(N_{16}\) ,in base 16 (hexadecimal) as the following:</p>
+
+<p>\[ N&#95;{16} = \sum&#95;{i} a&#95;{i} 16^i \]</p>
+
+<p>where \(a_i\) is some integer between 0 and 15.</p>
+
+<p>Similarly we may represent a number in Base64 as:</p>
+
+<p>\[ N&#95;{64} = \sum&#95;{j} b&#95;{j} 64^j = \sum&#95;{j} b&#95;{j} 16^j 4^j \]</p>
+
+<p>If we are representing the same number (i.e. we are converting between bases) then we can equate these two:</p>
+
+<p>\[ N = \sum&#95;{j} b&#95;{j} 16^j 4^j = \sum&#95;{i} a&#95;{i} 16^i \]</p>
+
+<p>We wish to convert from base 16 to base 64. The representation of a number in a higher base can only be smaller or at most the same size (in terms of the length of the string required to represent it, i.e. the values of i or j) as the representation in the original lower base.</p>
+
+<p>This means that if we start at the most significant digit of the hex string we can imagine that at most there will be a digit equivalent to it in the base64 string and then we can equate i and j and calculate the value of that digit. Therefore for that digit, we obtain:</p>
+
+<p>\[ b&#95;{i} 16^i 4^i = a&#95;{i} 16^i \]
+\[ \therefore b&#95;{i}  = \frac{a&#95;{i}}{4^i}  \]</p>
+
+<p>But the values of a and b must be integers within the range of representation of their respective bases - in this case it is important to us that b is an integer, we know that it will always be less than 64 because we are starting with the most significant digit and converting to a lower base so the problem will be carrying the decimal remainder to the lower digits rather than carrying the modulo 64 remainder to higher digits. This is confusing to discuss in the abstract but will be clearly demonstrated by an example.</p>
+
+<p>Let us consider the hex string &#39;2af3&#39; which is equal to 10995 in decimal. We start with the most significant digit which is 2. It is the 4th digit and therefore using our polynomial representation we have i=3, as i=0 for the first digit. Therefore from the above arguments we calculate:</p>
+
+<p>\[ \frac{2}{4^3} = \frac{1}{32} \]</p>
+
+<p>Therefore the integer part is zero, so the base64 value for this digit is zero, represented by A. To carry the remainder along to the next digit we multiply the decimal part by 64 and then add it to the next digit.</p>
+
+<p>\[ \frac{1}{32} \cdot 64 = 2 \]</p>
+
+<p>Therefore the following digit has the value:</p>
+
+<p>\[ 2 + \frac{10}{4^2} \]</p>
+
+<p>The 2 comes from the carry and the 10 from the fact that the next digit is &#39;a&#39; which represents a value of 10 in the hex number system.</p>
+
+<p>The integer part of this is 2, represented in base64 as C, so the first digit in our base 64 string is C. Then we repeat the carry process as before:
+\[\frac{10}{4^2} \cdot 64 = 40 \]</p>
+
+<p>Thus the value of the next digit is:</p>
+
+<p>\[40+\frac{15}{4} = 43 + \frac{3}{4}\]</p>
+
+<p>The representation of 43 in base64 is r. And then we carry over the decimal part as before:
+\[\frac{3}{4}\cdot 64 = 48\]</p>
+
+<p>Thus we get the value of the final digit to be:</p>
+
+<p>\[ 48+ 3 = 51\]</p>
+
+<p>51 is represented as z in base 64 and thus the representation of the hex string 2af3 is Crz in base64, note that the string we obtained was ACrz but we strip the leading zeroes (which are represented by A).</p>
+
+<p>This result can be confirmed by quickly checking that the decimal representations agree:
+\[ (2 \times 64^2) + (43 \times 64) + 51 = (2 \times 16^3) + (10 \times 16^2) + (15 \times 16) + 3 = 10995 \]</p>
+
+<p>I had some difficulty with insufficient precision when using the standard Python float types and so I used the Decimal class from the decimal module which allows arbritary precision floating point calculations.</p>
+
+<!--- _ = &#95; --->
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">alexgmcm</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-12-13T10:00:36+00:00'><span class='date'>13/12/14</span> <span class='time'>10:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/crypto/'>crypto</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://alexgmcm.github.io/blog/2014/12/13/all-your-base64-are-belong-to-us/" data-via="" data-counturl="http://alexgmcm.github.io/blog/2014/12/13/all-your-base64-are-belong-to-us/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/11/22/it-is-an-ex-classic-it-has-ceased-to-be-dot-dot-dot/" title="Previous Post: It is an ex-Classic. It has ceased to be...">&laquo; It is an ex-Classic. It has ceased to be&#8230;</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/13/all-your-base64-are-belong-to-us/">All Your Base64 Are Belong to Us</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/22/it-is-an-ex-classic-it-has-ceased-to-be-dot-dot-dot/">It Is an ex-Classic. It Has Ceased to Be&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/20/basket-case/">Basket Case</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - alexgmcm -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
