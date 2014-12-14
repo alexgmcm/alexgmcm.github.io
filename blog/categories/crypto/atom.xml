@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Crypto | In The Aggregate]]></title>
   <link href="http://alexgmcm.github.io/blog/categories/crypto/atom.xml" rel="self"/>
   <link href="http://alexgmcm.github.io/"/>
-  <updated>2014-12-14T15:09:06+00:00</updated>
+  <updated>2014-12-14T15:16:18+00:00</updated>
   <id>http://alexgmcm.github.io/</id>
   <author>
     <name><![CDATA[alexgmcm]]></name>
@@ -81,6 +81,16 @@
 \[ (2 \times 64^2) + (43 \times 64) + 51 = (2 \times 16^3) + (10 \times 16^2) + (15 \times 16) + 3 = 10995 \]</p>
 
 <p>I had some difficulty with insufficient precision when using the standard Python float types and so I used the Decimal class from the decimal module which allows arbritary precision floating point calculations.</p>
+
+<p>Then I was able to take their example hex string input of:</p>
+
+<p><blockquote><p>49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d</p></blockquote></p>
+
+<p>and produce the correct base64 output:</p>
+
+<p><blockquote><p>SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t</p></blockquote></p>
+
+<p>One down, 47 to go. For great justice.</p>
 
 <!--- _ = &#95; --->
 ]]></content>
